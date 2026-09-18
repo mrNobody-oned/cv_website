@@ -3,62 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nimshi Nasayao — Electronics &amp; Network Engineer</title>
-<meta name="description" content="Nimshi Nasayao — Senior System &amp; Network Department Manager and Electronics Engineer specializing in network infrastructure, IoT, embedded systems, and smart-city integration.">
+<title>Nimshi Nasayao — Senior System &amp; Network Department Manager</title>
+<meta name="description" content="Nimshi Nasayao — Electronics Engineer specializing in network engineering, IoT, embedded systems, and systems integration.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ============ HEADER ============ -->
 <header class="site-header">
-  <div class="wrap header-row">
-    <a href="#top" class="brand">Nimshi Nasayao</a>
+  <div class="header-row">
+    <a href="#top" class="brand">Nimshi<span class="dot">.</span></a>
     <nav class="nav" aria-label="Section navigation">
+      <a href="#top">Home</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Portfolio</a>
       <a href="#skills">Skills</a>
       <a href="#certifications">Certifications</a>
       <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
     </nav>
+    <a href="#contact" class="btn btn-primary btn-sm header-cta">Let's Talk</a>
   </div>
 </header>
 
 <main>
 
+  <!-- ============ HERO ============ -->
   <section id="top" class="hero">
-    <svg class="hero-trace" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <pattern id="circuit" width="200" height="200" patternUnits="userSpaceOnUse">
-          <path d="M0 40 H70 V100 H140" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M200 160 H130 V90" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M40 200 V150 H100 V180 H160" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M0 190 H20" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="70" cy="40" r="4" fill="currentColor"/>
-          <circle cx="140" cy="100" r="4" fill="currentColor"/>
-          <circle cx="130" cy="160" r="4" fill="currentColor"/>
-          <circle cx="100" cy="150" r="4" fill="currentColor"/>
-          <circle cx="160" cy="180" r="4" fill="currentColor"/>
-        </pattern>
-      </defs>
-      <rect width="800" height="500" fill="url(#circuit)"/>
-    </svg>
+    <div class="hero-grid">
 
-    <div class="wrap hero-inner">
-      <p class="eyebrow-mono">Calabarzon, Philippines</p>
-      <h1>Nimshi Nasayao</h1>
-      <p class="hero-role">Senior System &amp; Network Department Manager<br>Electronics Engineer — network, IoT &amp; embedded systems</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener">View LinkedIn</a>
-        <button class="btn btn-ghost" id="print-btn" type="button">Download as PDF</button>
+      <div class="hero-inner">
+        <p class="hero-greeting">Hi, I'm <span class="name">Nimshi Nasayao</span></p>
+        <p class="hero-title">Electronics &amp; Network Engineer</p>
+
+        <p class="hero-role">I design, build, and maintain technology solutions that bring hardware, software, and network infrastructure together — from citywide surveillance backbones to environmental and structural monitoring platforms.</p>
+
+        <ul class="hero-skills">
+          <li>Networking &amp; Infrastructure</li>
+          <li>IoT &amp; Embedded</li>
+          <li>Systems Integration</li>
+          <li>AV &amp; Surveillance</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Hire Me</a>
+          <a class="btn btn-ghost" href="#projects">See Projects</a>
+        </div>
+
+        <!-- Circular social buttons -->
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.7" r="1"/><path d="M11.5 17v-4.2c0-1.6 1-2.6 2.4-2.6s2.1 1 2.1 2.6V17"/></svg>
+          </a>
+          <!-- Replace with your real email address -->
+          <a href="mailto:you@example.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+          <button class="btn btn-ghost btn-sm" id="print-btn" type="button" style="margin-left:8px;">Download CV</button>
+        </div>
       </div>
+
+      <!-- PHOTO SLOT — images/photo.png
+           Use a CUTOUT image (background removed, transparent PNG) so you
+           appear to stand on the page, like the reference design.
+           If the file is missing, this column hides itself automatically. -->
+      <div class="hero-photo-col" id="hero-photo-col">
+        <img class="hero-photo" src="images/photo.png" alt="Nimshi Nasayao"
+             onerror="document.getElementById('hero-photo-col').style.display='none';
+                      document.querySelector('.hero-grid').classList.add('no-photo');">
+      </div>
+
     </div>
   </section>
 
+  <!-- ============ ABOUT ============ -->
   <section id="about" class="section">
     <div class="wrap">
       <h2>About</h2>
@@ -69,15 +91,27 @@
     </div>
   </section>
 
+  <!-- ============ EXPERIENCE ============
+       To add a role: copy one <li class="timeline-item"> block and edit it. -->
   <section id="experience" class="section section-alt">
     <div class="wrap">
       <h2>Experience</h2>
+      <!-- Company logos: drop square PNG/SVG files (44×44 or larger,
+           roughly square) into images/logos/ named uplink.png, rohm.png,
+           and celestron.png. Each sits on a white badge so any logo
+           (transparent or not) stays legible on the dark background.
+           A missing file just hides itself — no broken-image icon. -->
       <ol class="timeline">
 
         <li class="timeline-item">
           <p class="tl-date">Sep 2025 — Present</p>
-          <h3>Senior Department Manager — System &amp; Network Department</h3>
-          <p class="tl-meta">Uplink Integrated Solutions Inc. · Calabarzon, Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/uplink.png" alt="Uplink Integrated Solutions Inc. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Senior Department Manager — System &amp; Network Department</h3>
+              <p class="tl-meta">Uplink Integrated Solutions Inc. · Calabarzon, Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Lead the System and Network Department, overseeing design, implementation, and maintenance of network and AV infrastructure solutions.</li>
             <li>Drive operational excellence in network engineering, systems integration, and technology deployments for enterprise and industrial clients.</li>
@@ -86,8 +120,13 @@
 
         <li class="timeline-item">
           <p class="tl-date">May 2025 — Sep 2025</p>
-          <h3>Assistant Business Development Manager</h3>
-          <p class="tl-meta">Uplink Integrated Solutions Inc. · Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/uplink.png" alt="Uplink Integrated Solutions Inc. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Assistant Business Development Manager</h3>
+              <p class="tl-meta">Uplink Integrated Solutions Inc. · Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Supported business growth initiatives, client engagement, and solution positioning for system and network projects.</li>
           </ul>
@@ -95,8 +134,13 @@
 
         <li class="timeline-item">
           <p class="tl-date">Jun 2023 — Jun 2025</p>
-          <h3>Business Development Engineer</h3>
-          <p class="tl-meta">Uplink Integrated Solutions Inc. · Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/uplink.png" alt="Uplink Integrated Solutions Inc. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Business Development Engineer</h3>
+              <p class="tl-meta">Uplink Integrated Solutions Inc. · Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Developed technical proposals and solution designs for AV systems, network infrastructure, and integrated technology projects.</li>
             <li>Collaborated with clients and internal teams to align technical capabilities with business requirements.</li>
@@ -105,8 +149,13 @@
 
         <li class="timeline-item">
           <p class="tl-date">Aug 2022 — Jun 2023</p>
-          <h3>Senior System and Network Engineer</h3>
-          <p class="tl-meta">Uplink Integrated Solutions Inc. · Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/uplink.png" alt="Uplink Integrated Solutions Inc. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Senior System and Network Engineer</h3>
+              <p class="tl-meta">Uplink Integrated Solutions Inc. · Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Designed and implemented network infrastructure and audio-visual systems for commercial and industrial environments.</li>
             <li>Ensured system reliability, security, and scalability across deployments involving Dante audio networking and related technologies.</li>
@@ -115,8 +164,13 @@
 
         <li class="timeline-item">
           <p class="tl-date">Aug 2021 — Aug 2022</p>
-          <h3>Technical Supervisor</h3>
-          <p class="tl-meta">Uplink Integrated Solutions Inc. · Calamba, Calabarzon, Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/uplink.png" alt="Uplink Integrated Solutions Inc. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Technical Supervisor</h3>
+              <p class="tl-meta">Uplink Integrated Solutions Inc. · Calamba, Calabarzon, Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Supervised technical teams in the installation, commissioning, and maintenance of network and AV systems.</li>
             <li>Provided on-site troubleshooting and quality assurance to meet project specifications and timelines.</li>
@@ -125,8 +179,13 @@
 
         <li class="timeline-item">
           <p class="tl-date">Jun 2020 — Jul 2021</p>
-          <h3>Test Maintenance Engineer</h3>
-          <p class="tl-meta">ROHM Co., Ltd. · Carmona, Calabarzon, Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/rohm.png" alt="ROHM Co., Ltd. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Test Maintenance Engineer</h3>
+              <p class="tl-meta">ROHM Co., Ltd. · Carmona, Calabarzon, Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Troubleshot Automatic Test Equipment (Teradyne, DiamondX, Dolphin RSX 5000) for precision IC testing against stringent data specifications.</li>
             <li>Repaired ATE circuit boards through circuit analysis using schematic diagrams, signal generators, oscilloscopes, and multimeters.</li>
@@ -136,8 +195,13 @@
 
         <li class="timeline-item">
           <p class="tl-date">May 2018 — Aug 2018</p>
-          <h3>Service Technician</h3>
-          <p class="tl-meta">Celestron Cable Television Inc. — Engineering Department · San Pablo, Laguna, Philippines</p>
+          <div class="tl-head">
+            <img class="tl-logo" src="images/logos/celestron.png" alt="Celestron Cable Television Inc. logo" onerror="this.style.display='none'">
+            <div class="tl-head-text">
+              <h3>Service Technician</h3>
+              <p class="tl-meta">Celestron Cable Television Inc. — Engineering Department · San Pablo, Laguna, Philippines</p>
+            </div>
+          </div>
           <ul>
             <li>Installed and troubleshot subscriber lines; repaired damaged fiber optic cable (FOC) lines.</li>
           </ul>
@@ -147,6 +211,8 @@
     </div>
   </section>
 
+  <!-- ============ KEY PROJECTS ============
+       Featured projects are cards. Older ones go in the collapsed list below. -->
   <section id="projects" class="section">
     <div class="wrap">
       <h2>Key Projects</h2>
@@ -155,6 +221,8 @@
       <div class="project-grid">
 
         <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/seismic.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/seismic.jpg" alt="" onerror="this.style.display='none'">
           <p class="tl-date">May 2026 — Present</p>
           <h3>Seismic Accelerograph Monitoring System</h3>
           <p class="tl-meta">DPWH Compliance</p>
@@ -162,6 +230,8 @@
         </article>
 
         <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/air-quality.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/air-quality.jpg" alt="" onerror="this.style.display='none'">
           <p class="tl-date">Apr 2026 — Present</p>
           <h3>Air Quality Monitoring System</h3>
           <p class="tl-meta">Multi-sensor environmental platform</p>
@@ -169,6 +239,8 @@
         </article>
 
         <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/drone.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/drone.jpg" alt="" onerror="this.style.display='none'">
           <p class="tl-date">Mar 2026 — May 2026</p>
           <h3>Autonomous Aerial Drone Surveillance System</h3>
           <p class="tl-meta">Smart docking station</p>
@@ -176,6 +248,8 @@
         </article>
 
         <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/itms.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/itms.jpg" alt="" onerror="this.style.display='none'">
           <p class="tl-date">2026 — Present</p>
           <h3>Intelligent Traffic Management System (ITMS)</h3>
           <p class="tl-meta">PON fiber backbone</p>
@@ -183,6 +257,8 @@
         </article>
 
         <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/ews.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/ews.jpg" alt="" onerror="this.style.display='none'">
           <p class="tl-date">Feb 2025 — Jun 2025</p>
           <h3>Emergency Warning System for the Deaf</h3>
           <p class="tl-meta">Muntinlupa City</p>
@@ -190,6 +266,8 @@
         </article>
 
         <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/av-conference.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/av-conference.jpg" alt="" onerror="this.style.display='none'">
           <p class="tl-date">Mar 2026 — Apr 2026</p>
           <h3>Intelligent AV Conference &amp; Collaboration System</h3>
           <p class="tl-meta">Dante-enabled AV integration</p>
@@ -218,7 +296,29 @@
     </div>
   </section>
 
-  <section id="skills" class="section section-alt">
+  <!-- ============ PERSONAL PROJECTS ============
+       Delete this whole <section> if you don't want it yet,
+       or copy a .project-card block above into the grid. -->
+  <section id="personal-projects" class="section section-alt">
+    <div class="wrap">
+      <h2>Personal Projects</h2>
+      <p class="section-intro">Things I've built on my own time.</p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <!-- IMAGE SLOT — images/projects/cv-website.jpg (16:9 works best) -->
+          <img class="project-card-img" src="images/projects/cv-website.jpg" alt="" onerror="this.style.display='none'">
+          <p class="tl-date">2026</p>
+          <h3>Personal CV Website</h3>
+          <p class="tl-meta">HTML, CSS &amp; Laravel</p>
+          <p>Designed and built this site from scratch — a static version hosted on GitHub Pages, plus a Laravel build with a database-backed admin panel for editing content without touching code.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section">
     <div class="wrap">
       <h2>Skills</h2>
       <div class="skills-grid">
@@ -276,28 +376,33 @@
     </div>
   </section>
 
-  <section id="certifications" class="section">
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section id="certifications" class="section section-alt">
     <div class="wrap">
       <h2>Certifications</h2>
+      <!-- Certification/vendor logos: drop square PNG/SVG files into
+           images/logos/ using the names below. Any cert without a
+           matching file just shows as plain text — no broken-image icon. -->
       <ul class="cert-list">
-        <li>Dahua Certified Security Expert</li>
-        <li>VSOL Certified ICT Associate</li>
-        <li>Maipu Certified Network Professional</li>
-        <li>Ruijie Specialist Engineer</li>
-        <li>Fortinet NSE 2 — Network Security Expert, Certified Associate</li>
-        <li>COSH — Safety Officer 2</li>
-        <li>Interference Isolation &amp; Tracking</li>
-        <li>Advanced Spectrum Analyzer</li>
-        <li>Frequency Scanning Best Practices</li>
-        <li>Wireless Telecom Spectrum</li>
-        <li>Wireless LAN Masterclass</li>
-        <li>Electronic Technician</li>
-        <li>Electronic Engineer</li>
+        <li><img class="cert-logo" src="images/logos/PRC.svg" alt="" onerror="this.style.display='none'"><span>Electronic Technician</span></li>
+        <li><img class="cert-logo" src="images/logos/PRC.svg" alt="" onerror="this.style.display='none'"><span>Electronic Engineer</span></li>
+        <li><img class="cert-logo" src="images/logos/dahua.png" alt="" onerror="this.style.display='none'"><span>Dahua Certified Security Expert</span></li>
+        <li><img class="cert-logo" src="images/logos/VSOL.png" alt="" onerror="this.style.display='none'"><span>VSOL Certified ICT Associate</span></li>
+        <li><img class="cert-logo" src="images/logos/maipu.png" alt="" onerror="this.style.display='none'"><span>Maipu Certified Network Professional</span></li>
+        <li><img class="cert-logo" src="images/logos/ruijie.png" alt="" onerror="this.style.display='none'"><span>Ruijie Specialist Engineer</span></li>
+        <li><img class="cert-logo" src="images/logos/fortinet.png" alt="" onerror="this.style.display='none'"><span>Fortinet NSE 2 — Network Security Expert, Certified Associate</span></li>
+        <li><img class="cert-logo" src="images/logos/DOLE.svg" alt="" onerror="this.style.display='none'"><span>COSH — Safety Officer 2</span></li>
+        <li><img class="cert-logo" src="images/logos/interference-isolation.png" alt="" onerror="this.style.display='none'"><span>Interference Isolation &amp; Tracking</span></li>
+        <li><img class="cert-logo" src="images/logos/spectrum-analyzer.png" alt="" onerror="this.style.display='none'"><span>Advanced Spectrum Analyzer</span></li>
+        <li><img class="cert-logo" src="images/logos/frequency-scanning.png" alt="" onerror="this.style.display='none'"><span>Frequency Scanning Best Practices</span></li>
+        <li><img class="cert-logo" src="images/logos/wireless-telecom-spectrum.png" alt="" onerror="this.style.display='none'"><span>Wireless Telecom Spectrum</span></li>
+        <li><img class="cert-logo" src="images/logos/wireless-lan.png" alt="" onerror="this.style.display='none'"><span>Wireless LAN Masterclass</span></li>
       </ul>
     </div>
   </section>
 
-  <section id="education" class="section section-alt">
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section">
     <div class="wrap">
       <h2>Education</h2>
       <div class="edu-block">
@@ -308,14 +413,23 @@
     </div>
   </section>
 
-  <section id="contact" class="section contact-section">
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section section-alt contact-section">
     <div class="wrap">
       <h2>Get in touch</h2>
       <p class="section-intro">Open to collaborating on network engineering, IoT, embedded systems, industrial automation, and environmental monitoring projects.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener">Message on LinkedIn</a>
-        <!-- TODO: replace with a real email if you want it public -->
-        <a class="btn btn-ghost" href="mailto:[email protected]">Send an email</a>
+        <!-- Replace with your real email address -->
+        <a class="btn btn-ghost" href="mailto:you@example.com">Send an email</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.7" r="1"/><path d="M11.5 17v-4.2c0-1.6 1-2.6 2.4-2.6s2.1 1 2.1 2.6V17"/></svg>
+        </a>
+        <a href="mailto:you@example.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
       </div>
     </div>
   </section>
