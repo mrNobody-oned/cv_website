@@ -10,7 +10,7 @@
   --accent: #39FF88;
   --accent-hover: #22D96C;
   --accent-soft: rgba(57, 255, 136, 0.12);
-  --accent-dark: #04140B;
+  --accent-dark: #000000;
 
   /* Section color zones — three dark, low-luminance tints (solder-mask
      green / blueprint blue / copper amber) that rotate across sections
@@ -65,6 +65,8 @@ body{
   margin: 0 auto;
   padding-left: var(--space-3);
   padding-right: var(--space-3);
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3, .brand, .nav a, .btn{
@@ -72,10 +74,24 @@ h1, h2, h3, .brand, .nav a, .btn{
 }
 
 h2{
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  font-weight: 700;
-  margin: 0 0 var(--space-2);
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-weight: 600;
+  margin: 0 0 var(--space-4);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+h2::before{
+  content: "";
+  flex: 0 0 auto;
+  width: 26px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
 h3{
@@ -90,16 +106,7 @@ a{ color: inherit; }
 
 ::selection{ background: var(--accent); color: var(--accent-dark); }
 
-/* Small accent rule under section headings */
-.section > .wrap > h2::after{
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-  margin-top: 10px;
-}
+
 
 /* ---------- Header ---------- */
 .site-header{
@@ -123,6 +130,9 @@ a{ color: inherit; }
 }
 
 .brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.3rem;
@@ -131,6 +141,7 @@ a{ color: inherit; }
   color: var(--ink);
 }
 .brand .dot{ color: var(--accent); }
+.brand-accent{ color: var(--accent); }
 
 .nav{
   display: flex;
@@ -139,15 +150,16 @@ a{ color: inherit; }
 }
 
 .nav a{
-  font-size: 0.93rem;
+  font-size: 0.98rem;
   font-weight: 500;
   text-decoration: none;
-  color: var(--ink-soft);
+  color: rgba(233, 246, 239, 0.82);
   position: relative;
-  padding: 4px 0;
+  padding: 8px 2px;
 }
 
 .nav a:hover, .nav a:focus-visible{ color: var(--accent); }
+.nav a.active{ color: var(--ink); }
 
 .nav a::after{
   content: "";
@@ -158,7 +170,7 @@ a{ color: inherit; }
   border-radius: 2px;
   transition: width 0.22s ease;
 }
-.nav a:hover::after{ width: 100%; }
+.nav a:hover::after, .nav a.active::after{ width: 100%; }
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -188,9 +200,22 @@ a{ color: inherit; }
   background: transparent;
   border-color: var(--accent);
   color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(57,255,136,0.15), 0 4px 16px rgba(57,255,136,0.18);
 }
 .btn-ghost:hover{
   background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(57,255,136,0.25), 0 8px 22px rgba(57,255,136,0.3);
+}
+
+.btn-outline{
+  background: transparent;
+  border-color: rgba(233,246,239,0.35);
+  color: var(--ink);
+}
+.btn-outline:hover{
+  border-color: var(--ink);
+  background: rgba(233,246,239,0.06);
   transform: translateY(-2px);
 }
 
@@ -204,6 +229,8 @@ a{ color: inherit; }
 }
 
 .hero-grid{
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: end;
@@ -222,46 +249,87 @@ a{ color: inherit; }
   max-width: 560px;
 }
 
-.hero-greeting{
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4.4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
-  margin: 0 0 6px;
+/* "Hi, I'm" eyebrow label */
+.eyebrow{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
-.hero-greeting .name{ color: var(--accent); }
+.eyebrow-dash{
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.hero-name{
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.4vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  margin: 0 0 var(--space-2);
+}
+.hero-name-line{ display: block; }
+.hero-name-accent{
+  color: var(--accent);
+  background: linear-gradient(180deg, #8CFFC0, var(--accent) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .hero-title{
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  font-weight: 600;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
   color: var(--ink-soft);
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-3);
 }
 
 .hero-role{
   color: var(--ink-soft);
   max-width: 46ch;
   margin: 0 0 var(--space-3);
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
+/* Outlined pill badges, two per row like the reference layout */
 .hero-skills{
   list-style: none;
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-4);
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 12px;
 }
 
 .hero-skills li{
-  font-size: 0.78rem;
-  font-weight: 500;
-  background: var(--accent-soft);
-  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(57,255,136,0.35);
   border-radius: var(--radius-pill);
-  padding: 6px 14px;
+  padding: 9px 18px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+.hero-skills li:hover{
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 6px 16px rgba(57,255,136,0.2);
 }
 
 .hero-actions{
@@ -271,7 +339,43 @@ a{ color: inherit; }
   margin-bottom: var(--space-4);
 }
 
-/* Circular social buttons */
+/* Arrow glyph inside buttons */
+.btn{ display: inline-flex; align-items: center; gap: 9px; }
+.btn-arrow{ transition: transform 0.18s ease; }
+.btn:hover .btn-arrow{ transform: translateX(3px); }
+
+/* Icon + label social row (hero) */
+.hero-socials{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+.social-link:hover{ color: var(--accent); }
+
+.social-sep{
+  width: 1px;
+  height: 16px;
+  background: var(--line);
+}
+
+/* Circular social buttons (used in the Contact section) */
 .socials{
   display: flex;
   gap: 12px;
@@ -292,6 +396,65 @@ a{ color: inherit; }
 }
 .socials a:hover{ background: var(--accent-hover); transform: translateY(-3px); }
 
+/* Decorative circuit-board line art */
+.hero-circuit{
+  position: absolute;
+  z-index: 0;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hero-circuit circle{ fill: var(--accent); stroke: none; }
+.hero-circuit-left{
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 140px;
+  opacity: 0.35;
+}
+.hero-circuit-right{
+  right: 0;
+  top: 40px;
+  width: 40%;
+  max-width: 420px;
+  height: auto;
+}
+.hero-circuit .mesh-dot circle{ opacity: 0.55; }
+.hero-circuit .pulse{ animation: circuit-pulse 2.6s ease-in-out infinite; }
+@keyframes circuit-pulse{
+  0%, 100%{ opacity: 1; }
+  50%{ opacity: 0.35; }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-circuit .pulse{ animation: none; }
+}
+
+.hero-tagline{
+  position: absolute;
+  z-index: 1;
+  top: 88px;
+  right: 8%;
+  max-width: 200px;
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  text-align: left;
+}
+.tagline-dash{
+  display: block;
+  margin: 10px 0 0;
+  width: 26px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
 /* Photo column — expects a cutout PNG with transparent background */
 .hero-photo-col{
   position: relative;
@@ -308,24 +471,31 @@ a{ color: inherit; }
   display: block;
   position: relative;
   z-index: 1;
+  /* Grade the photo toward the site's palette and rim-light its silhouette
+     with the accent color, so a plain studio shot reads as designed-in
+     rather than pasted on top of the neon theme. */
+  filter:
+    saturate(0.92) contrast(1.05) brightness(0.97)
+    drop-shadow(0 0 55px rgba(57,255,136,0.30))
+    drop-shadow(0 0 18px rgba(57,255,136,0.40));
 }
 
 /* Soft accent glow behind the photo */
 .hero-photo-col::before{
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 420px;
-  height: 420px;
+  width: 620px;
+  height: 620px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(57,255,136,0.20), rgba(57,255,136,0) 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(57,255,136,0.24), rgba(57,255,136,0) 70%);
   z-index: 0;
 }
 
 /* ---------- Sections ---------- */
-.section{ padding: var(--space-6) 0; }
+.section{ padding: var(--space-6) 0; position: relative; overflow: hidden; }
 
 /* Each section gets its own color zone (see --tint-a/b/c above) instead
    of alternating just two near-identical shades. */
@@ -337,6 +507,21 @@ a{ color: inherit; }
 #certifications{ background: var(--tint-b); }
 #education{ background: var(--tint-a); }
 #contact{ background: var(--tint-c); }
+
+/* Faint corner circuit-trace accents, echoing the hero's artwork at a
+   much quieter volume so section text stays the focus. */
+.section-decor{
+  position: absolute;
+  width: 180px;
+  height: 140px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+.section-decor path{ fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.section-decor circle{ fill: var(--accent); }
+.section-decor-tr{ top: 0; right: 0; }
+.section-decor-bl{ bottom: 0; left: 0; }
 
 .section-intro{
   color: var(--ink-soft);
@@ -445,6 +630,154 @@ a{ color: inherit; }
   aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
+}
+
+/* ---------- Featured project scroller ----------
+   The photo breaks out of the centered .wrap to run the full width of
+   the page. Title and description float over the top of it; the
+   timeline is a separate panel overlaid on the right, running the full
+   height of the photo. Scrolling anywhere over the block (script.js)
+   pages through projects one at a time, crossfading the background and
+   swapping the title/description — once you're past the first or last
+   project, the scroll passes through to the page as normal. */
+.feature-scroller{
+  position: relative;
+  margin-top: var(--space-1);
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.feature-stage{
+  position: relative;
+  width: 100%;
+  height: min(88vh, 720px);
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.feature-bg{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.feature-bg.is-visible{ opacity: 1; }
+
+.feature-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: var(--space-4) min(var(--space-6), 8vw) var(--space-6);
+  background: linear-gradient(180deg, rgba(6,10,8,0.92) 0%, rgba(6,10,8,0.72) 40%, rgba(6,10,8,0) 100%);
+}
+
+.feature-info h3{
+  margin: 4px 0 6px;
+  font-size: 1.7rem;
+}
+
+.feature-info .tl-meta{ margin-bottom: var(--space-1); }
+
+.feature-info p:last-child{
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin-bottom: 0;
+  font-size: 0.98rem;
+}
+
+/* Timeline overlay panel — runs the full height of the photo, pinned to
+   the right edge. */
+.feature-timeline{
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(380px, 42%);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: var(--space-4) var(--space-4) var(--space-4) var(--space-4);
+  background: rgba(8,13,10,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-soft) transparent;
+}
+.feature-timeline::-webkit-scrollbar{ width: 6px; }
+.feature-timeline::-webkit-scrollbar-thumb{ background: var(--accent-soft); border-radius: 3px; }
+
+.feature-timeline-item{
+  position: relative;
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+.feature-timeline-item:last-child{ padding-bottom: 0; }
+
+.feature-timeline-item::before{
+  content: "";
+  position: absolute;
+  left: calc(var(--space-4) * -1 + 8px);
+  top: calc(var(--space-2) + 4px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tint-b);
+  border: 3px solid var(--line);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.feature-timeline-item h3{ margin: 2px 0 4px; font-size: 0.96rem; line-height: 1.35; }
+.feature-timeline-item .tl-meta{ font-size: 0.82rem; margin: 0; }
+.feature-timeline-item .tl-date{ font-size: 0.75rem; }
+
+.feature-timeline-item.is-active{ opacity: 1; }
+.feature-timeline-item.is-active::before{
+  border-color: var(--accent);
+  background: var(--tint-c);
+}
+
+.feature-timeline-item:hover,
+.feature-timeline-item:focus-visible{ opacity: 0.85; }
+.feature-timeline-item:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 860px){
+  .feature-stage{ height: 42vh; min-height: 260px; }
+  .feature-info{ padding: var(--space-2) var(--space-3) var(--space-4); }
+  .feature-info h3{ font-size: 1.15rem; }
+  .feature-info p:last-child{ max-width: none; font-size: 0.9rem; }
+
+  /* On small screens the overlay panel becomes a normal block below the
+     photo instead of floating on top of it — easier to read and scroll
+     with one thumb. */
+  .feature-timeline{
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    display: block;
+    margin-top: var(--space-3);
+    padding: var(--space-2) 0 0 var(--space-3);
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    border-left: 2px solid var(--line);
+  }
 }
 
 .more-projects{
@@ -558,7 +891,7 @@ a{ color: inherit; }
 /* ---------- Contact ---------- */
 .contact-section{ text-align: center; }
 .contact-section .section-intro{ margin-left: auto; margin-right: auto; }
-.contact-section > .wrap > h2::after{ margin-left: auto; margin-right: auto; }
+.contact-section > .wrap > h2{ justify-content: center; }
 .contact-section .hero-actions{ justify-content: center; margin-bottom: var(--space-3); }
 .contact-section .socials{ justify-content: center; }
 
@@ -589,15 +922,22 @@ a{ color: inherit; }
   .hero-inner{ padding: var(--space-5) 0 var(--space-3); max-width: none; }
   .hero-photo-col{ order: -1; padding-top: var(--space-4); }
   .hero-photo{ max-width: 300px; }
-  .hero-photo-col::before{ width: 280px; height: 280px; }
+  .hero-photo-col::before{ width: 400px; height: 400px; bottom: -10px; }
   .header-row{ padding: 14px var(--space-3); }
   .nav{ gap: var(--space-1) var(--space-3); }
+  .hero-tagline, .hero-circuit-left{ display: none; }
+  .hero-circuit-right{ top: 0; width: 60%; }
+}
+
+@media (max-width: 480px){
+  .hero-skills{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px){
   .project-grid{ grid-template-columns: 1fr; }
   .skills-grid{ grid-template-columns: 1fr; }
   .cert-list{ grid-template-columns: 1fr; }
+  .section-decor{ display: none; }
 }
 
 /* ---------- Print ---------- */
@@ -619,7 +959,8 @@ a{ color: inherit; }
     --tint-c: #ffffff;
   }
   body{ background-image: none; background-attachment: scroll; }
-  .site-header, .hero-actions, .site-footer, .socials, .hero-photo-col, .header-cta{ display: none; }
+  .site-header, .hero-actions, .site-footer, .socials, .hero-socials, .hero-photo-col, .header-cta,
+  .hero-circuit, .hero-tagline, .section-decor{ display: none; }
   .hero{ background: none; }
   .hero-grid{ grid-template-columns: 1fr; padding: 0; min-height: 0; }
   .hero-inner{ padding: var(--space-3) 0; }
@@ -628,4 +969,5 @@ a{ color: inherit; }
   details{ display: block; }
   summary{ display: none; }
   a{ text-decoration: none; }
+  h2{ letter-spacing: 0.06em; }
 }

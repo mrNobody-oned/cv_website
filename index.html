@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nimshi Nasayao — Senior System &amp; Network Department Manager</title>
-<meta name="description" content="Nimshi Nasayao — Electronics Engineer specializing in network engineering, IoT, embedded systems, and systems integration.">
+<title>Nimshi Chavez Nasayao — Senior System &amp; Network Department Manager</title>
+<meta name="description" content="Nimshi Chavez Nasayao — Electronics Engineer specializing in network engineering, IoT, embedded systems, and systems integration.">
+
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +21,11 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="header-row">
-    <a href="#top" class="brand">Nimshi<span class="dot">.</span></a>
+    <a href="#top" class="brand" aria-label="Nimshi Nasayao — home">
+      <span class="brand-accent">N</span>imshi<span class="dot">.</span>
+    </a>
     <nav class="nav" aria-label="Section navigation">
-      <a href="#top">Home</a>
+      <a href="#top" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Portfolio</a>
@@ -26,7 +33,7 @@
       <a href="#certifications">Certifications</a>
       <a href="#education">Education</a>
     </nav>
-    <a href="#contact" class="btn btn-primary btn-sm header-cta">Let's Talk</a>
+    <a href="#contact" class="btn btn-ghost btn-sm header-cta">Let's Talk<svg class="btn-arrow" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 8h9M8.5 3.5L13 8l-4.5 4.5"/></svg></a>
   </div>
 </header>
 
@@ -34,45 +41,86 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" class="hero">
+
+    <!-- Decorative circuit-trace artwork — purely visual, hidden from AT -->
+    <svg class="hero-circuit hero-circuit-left" viewBox="0 0 260 620" aria-hidden="true" focusable="false">
+      <path d="M0 60 L46 60 L46 140 L20 140 L20 420 L46 420 L46 520" />
+      <circle cx="46" cy="140" r="3.5" />
+      <circle cx="46" cy="420" r="3.5" />
+    </svg>
+
+    <svg class="hero-circuit hero-circuit-right" viewBox="0 0 500 520" aria-hidden="true" focusable="false">
+      <path d="M500 70 L460 70 L460 110 L400 110 L400 160 L340 160 L340 210 L280 210 L280 260 L220 260" />
+      <path d="M220 260 L220 310 L160 310 L160 360" />
+      <circle cx="460" cy="110" r="4" />
+      <circle cx="400" cy="160" r="4" />
+      <circle cx="340" cy="210" r="3.5" />
+      <circle cx="280" cy="260" r="4" class="pulse" />
+      <circle cx="160" cy="310" r="3.5" />
+      <circle cx="160" cy="360" r="3" />
+      <g class="mesh-dot">
+        <circle cx="430" cy="380" r="2.4" />
+        <circle cx="465" cy="405" r="1.8" />
+        <circle cx="405" cy="415" r="1.6" />
+        <circle cx="480" cy="440" r="2.2" />
+        <circle cx="440" cy="450" r="1.6" />
+        <circle cx="410" cy="470" r="1.8" />
+        <circle cx="470" cy="480" r="1.4" />
+      </g>
+    </svg>
+
+    <p class="hero-tagline">Connecting technology<br>for a smarter tomorrow<span class="tagline-dash" aria-hidden="true"></span></p>
+
     <div class="hero-grid">
 
       <div class="hero-inner">
-        <p class="hero-greeting">Hi, I'm <span class="name">Nimshi Nasayao</span></p>
+        <p class="eyebrow">Hi, I'm<span class="eyebrow-dash" aria-hidden="true"></span></p>
+        <h1 class="hero-name">
+          <span class="hero-name-line">Nimshi Chavez</span>
+          <span class="hero-name-line hero-name-accent">Nasayao</span>
+        </h1>
         <p class="hero-title">Electronics &amp; Network Engineer</p>
 
         <p class="hero-role">I design, build, and maintain technology solutions that bring hardware, software, and network infrastructure together — from citywide surveillance backbones to environmental and structural monitoring platforms.</p>
 
         <ul class="hero-skills">
           <li>Networking &amp; Infrastructure</li>
-          <li>IoT &amp; Embedded</li>
+          <li>IoT &amp; Embedded Systems</li>
           <li>Systems Integration</li>
           <li>AV &amp; Surveillance</li>
         </ul>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Hire Me</a>
-          <a class="btn btn-ghost" href="#projects">See Projects</a>
+          <a class="btn btn-primary" href="#contact">Hire Me<svg class="btn-arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 8h9M8.5 3.5L13 8l-4.5 4.5"/></svg></a>
+          <a class="btn btn-outline" href="#projects">View Projects<svg class="btn-arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 8h9M8.5 3.5L13 8l-4.5 4.5"/></svg></a>
         </div>
 
-        <!-- Circular social buttons -->
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <!-- Icon + label social row -->
+        <div class="hero-socials">
+          <a class="social-link" href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.7" r="1"/><path d="M11.5 17v-4.2c0-1.6 1-2.6 2.4-2.6s2.1 1 2.1 2.6V17"/></svg>
+            <span>LinkedIn</span>
           </a>
+          <span class="social-sep" aria-hidden="true"></span>
           <!-- Replace with your real email address -->
-          <a href="mailto:you@example.com" aria-label="Email">
+          <a class="social-link" href="mailto:you@example.com">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span>Email</span>
           </a>
-          <button class="btn btn-ghost btn-sm" id="print-btn" type="button" style="margin-left:8px;">Download CV</button>
+          <span class="social-sep" aria-hidden="true"></span>
+          <button class="social-link" id="print-btn" type="button">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/></svg>
+            <span>Download CV</span>
+          </button>
         </div>
       </div>
 
-      <!-- PHOTO SLOT — images/photo.png
+      <!-- PHOTO SLOT — images/photo.webp
            Use a CUTOUT image (background removed, transparent PNG) so you
            appear to stand on the page, like the reference design.
            If the file is missing, this column hides itself automatically. -->
       <div class="hero-photo-col" id="hero-photo-col">
-        <img class="hero-photo" src="images/photo.png" alt="Nimshi Nasayao"
+        <img class="hero-photo" src="images/photo.webp" alt="Nimshi Chavez Nasayao"
              onerror="document.getElementById('hero-photo-col').style.display='none';
                       document.querySelector('.hero-grid').classList.add('no-photo');">
       </div>
@@ -82,6 +130,7 @@
 
   <!-- ============ ABOUT ============ -->
   <section id="about" class="section">
+    <svg class="section-decor section-decor-tr" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M180 24 H104 L82 46 V96"/><circle cx="104" cy="24" r="3"/><circle cx="82" cy="96" r="2.5"/></svg>
     <div class="wrap">
       <h2>About</h2>
       <div class="prose">
@@ -94,6 +143,7 @@
   <!-- ============ EXPERIENCE ============
        To add a role: copy one <li class="timeline-item"> block and edit it. -->
   <section id="experience" class="section section-alt">
+    <svg class="section-decor section-decor-bl" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M0 116 H76 L98 94 V44"/><circle cx="76" cy="116" r="3"/><circle cx="98" cy="44" r="2.5"/></svg>
     <div class="wrap">
       <h2>Experience</h2>
       <!-- Company logos: drop square PNG/SVG files (44×44 or larger,
@@ -214,82 +264,118 @@
   <!-- ============ KEY PROJECTS ============
        Featured projects are cards. Older ones go in the collapsed list below. -->
   <section id="projects" class="section">
+    <svg class="section-decor section-decor-tr" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M180 24 H104 L82 46 V96"/><circle cx="104" cy="24" r="3"/><circle cx="82" cy="96" r="2.5"/></svg>
     <div class="wrap">
-      <h2>Key Projects</h2>
+      <h2>Featured Projects</h2>
       <p class="section-intro">A selection of recent systems I've designed, integrated, and delivered.</p>
 
-      <div class="project-grid">
+      <!-- SCROLL-DRIVEN FEATURE: a full-width photo is the background for
+           the whole block. The title/description sit over the top of it,
+           and the timeline overlays the bottom-right corner as its own
+           scrollable panel — scroll that list and script.js crossfades
+           the background photo and swaps the text to match whichever
+           project entry is in view. -->
+      <div class="feature-scroller">
 
-        <article class="project-card">
-          <!-- IMAGE SLOT — images/projects/seismic.jpg (16:9 works best) -->
-          <img class="project-card-img" src="images/projects/seismic.jpg" alt="" onerror="this.style.display='none'">
-          <p class="tl-date">May 2026 — Present</p>
-          <h3>Seismic Accelerograph Monitoring System</h3>
-          <p class="tl-meta">DPWH Compliance</p>
-          <p>Designed and integrated a seismic accelerograph monitoring system for continuous ground motion and structural vibration monitoring — sensors, data acquisition, communications, and a centralized dashboard with real-time data, event recording, and alarms.</p>
-        </article>
+        <div class="feature-stage">
+          <div class="feature-bg is-visible" id="feature-bg-a" style="background-image:url('images/projects/seismic.jpg')"></div>
+          <div class="feature-bg" id="feature-bg-b"></div>
+          <div class="feature-info">
+            <p class="tl-date" id="feature-date">May 2026 — Present</p>
+            <h3 id="feature-title">Seismic Accelerograph Monitoring System</h3>
+            <p class="tl-meta" id="feature-meta">DPWH Compliance</p>
+            <p id="feature-desc">Designed and integrated a seismic accelerograph monitoring system for continuous ground motion and structural vibration monitoring — sensors, data acquisition, communications, and a centralized dashboard with real-time data, event recording, and alarms.</p>
+          </div>
+        </div>
 
-        <article class="project-card">
-          <!-- IMAGE SLOT — images/projects/air-quality.jpg (16:9 works best) -->
-          <img class="project-card-img" src="images/projects/air-quality.jpg" alt="" onerror="this.style.display='none'">
-          <p class="tl-date">Apr 2026 — Present</p>
-          <h3>Air Quality Monitoring System</h3>
-          <p class="tl-meta">Multi-sensor environmental platform</p>
-          <p>Designed and integrated a multi-sensor air quality platform tracking PM2.5, PM10, SO₂, and airborne lead, with real-time collection, storage, a web dashboard, trend visualization, and alarm notifications.</p>
-        </article>
+        <ol class="feature-timeline" id="feature-timeline">
 
-        <article class="project-card">
-          <!-- IMAGE SLOT — images/projects/drone.jpg (16:9 works best) -->
-          <img class="project-card-img" src="images/projects/drone.jpg" alt="" onerror="this.style.display='none'">
-          <p class="tl-date">Mar 2026 — May 2026</p>
-          <h3>Autonomous Aerial Drone Surveillance System</h3>
-          <p class="tl-meta">Smart docking station</p>
-          <p>Integrated an autonomous drone system with a smart docking station for automated takeoff/landing, waypoint missions, and charging, with optical/thermal/LRF payloads streaming live video and telemetry to command centers for disaster response and infrastructure monitoring.</p>
-        </article>
+          <li class="feature-timeline-item is-active" tabindex="0"
+              data-img="images/projects/seismic.jpg"
+              data-date="May 2026 — Present"
+              data-title="Seismic Accelerograph Monitoring System"
+              data-meta="DPWH Compliance"
+              data-desc="Designed and integrated a seismic accelerograph monitoring system for continuous ground motion and structural vibration monitoring — sensors, data acquisition, communications, and a centralized dashboard with real-time data, event recording, and alarms.">
+            <p class="tl-date">May 2026 — Present</p>
+            <h3>Seismic Accelerograph Monitoring System</h3>
+            <p class="tl-meta">DPWH Compliance</p>
+          </li>
 
-        <article class="project-card">
-          <!-- IMAGE SLOT — images/projects/itms.jpg (16:9 works best) -->
-          <img class="project-card-img" src="images/projects/itms.jpg" alt="" onerror="this.style.display='none'">
-          <p class="tl-date">2026 — Present</p>
-          <h3>Intelligent Traffic Management System (ITMS)</h3>
-          <p class="tl-meta">PON fiber backbone</p>
-          <p>Designed and deployed an ITMS integrating traffic cameras, ANPR, pedestrian counting, and signal controllers over a PON fiber backbone, enabling real-time monitoring and incident detection from a centralized Operations Center.</p>
-        </article>
+          <li class="feature-timeline-item" tabindex="0"
+              data-img="images/projects/air-quality.jpg"
+              data-date="Apr 2026 — Present"
+              data-title="Air Quality Monitoring System"
+              data-meta="Multi-sensor environmental platform"
+              data-desc="Designed and integrated a multi-sensor air quality platform tracking PM2.5, PM10, SO₂, and airborne lead, with real-time collection, storage, a web dashboard, trend visualization, and alarm notifications.">
+            <p class="tl-date">Apr 2026 — Present</p>
+            <h3>Air Quality Monitoring System</h3>
+            <p class="tl-meta">Multi-sensor environmental platform</p>
+          </li>
 
-        <article class="project-card">
-          <!-- IMAGE SLOT — images/projects/ews.jpg (16:9 works best) -->
-          <img class="project-card-img" src="images/projects/ews.jpg" alt="" onerror="this.style.display='none'">
-          <p class="tl-date">Feb 2025 — Jun 2025</p>
-          <h3>Emergency Warning System for the Deaf</h3>
-          <p class="tl-meta">Muntinlupa City</p>
-          <p>Researched and developed an embedded emergency warning system integrated with the city's Operations Center via radio communication, with protocols designed for compatibility across multi-brand components — supporting citywide early warning for deaf residents.</p>
-        </article>
+          <li class="feature-timeline-item" tabindex="0"
+              data-img="images/projects/drone.jpg"
+              data-date="Mar 2026 — May 2026"
+              data-title="Autonomous Aerial Drone Surveillance System"
+              data-meta="Smart docking station"
+              data-desc="Integrated an autonomous drone system with a smart docking station for automated takeoff/landing, waypoint missions, and charging, with optical/thermal/LRF payloads streaming live video and telemetry to command centers for disaster response and infrastructure monitoring.">
+            <p class="tl-date">Mar 2026 — May 2026</p>
+            <h3>Autonomous Aerial Drone Surveillance System</h3>
+            <p class="tl-meta">Smart docking station</p>
+          </li>
 
-        <article class="project-card">
-          <!-- IMAGE SLOT — images/projects/av-conference.jpg (16:9 works best) -->
-          <img class="project-card-img" src="images/projects/av-conference.jpg" alt="" onerror="this.style.display='none'">
-          <p class="tl-date">Mar 2026 — Apr 2026</p>
-          <h3>Intelligent AV Conference &amp; Collaboration System</h3>
-          <p class="tl-meta">Dante-enabled AV integration</p>
-          <p>Designed and integrated a conference room AV solution with Dante-enabled audio, a digital mixer, video control, an interactive display, and room scheduling — full network and automation integration end to end.</p>
-        </article>
+          <li class="feature-timeline-item" tabindex="0"
+              data-img="images/projects/itms.jpg"
+              data-date="2026 — Present"
+              data-title="Intelligent Traffic Management System (ITMS)"
+              data-meta="PON fiber backbone"
+              data-desc="Designed and deployed an ITMS integrating traffic cameras, ANPR, pedestrian counting, and signal controllers over a PON fiber backbone, enabling real-time monitoring and incident detection from a centralized Operations Center.">
+            <p class="tl-date">2026 — Present</p>
+            <h3>Intelligent Traffic Management System (ITMS)</h3>
+            <p class="tl-meta">PON fiber backbone</p>
+          </li>
 
+          <li class="feature-timeline-item" tabindex="0"
+              data-img="images/projects/ews.jpg"
+              data-date="Feb 2025 — Jun 2025"
+              data-title="Emergency Warning System for the Deaf"
+              data-meta="Muntinlupa City"
+              data-desc="Researched and developed an embedded emergency warning system integrated with the city's Operations Center via radio communication, with protocols designed for compatibility across multi-brand components — supporting citywide early warning for deaf residents.">
+            <p class="tl-date">Feb 2025 — Jun 2025</p>
+            <h3>Emergency Warning System for the Deaf</h3>
+            <p class="tl-meta">Muntinlupa City</p>
+          </li>
+
+          <li class="feature-timeline-item" tabindex="0"
+              data-img="images/projects/av-conference.jpg"
+              data-date="Mar 2026 — Apr 2026"
+              data-title="Intelligent AV Conference &amp; Collaboration System"
+              data-meta="Dante-enabled AV integration"
+              data-desc="Designed and integrated a conference room AV solution with Dante-enabled audio, a digital mixer, video control, an interactive display, and room scheduling — full network and automation integration end to end.">
+            <p class="tl-date">Mar 2026 — Apr 2026</p>
+            <h3>Intelligent AV Conference &amp; Collaboration System</h3>
+            <p class="tl-meta">Dante-enabled AV integration</p>
+          </li>
+
+        </ol>
       </div>
 
       <details class="more-projects">
         <summary>Additional project history (12)</summary>
         <ul class="project-list">
-          <li><span>Carmona Citywide Surveillance System</span><span class="tl-date">2025</span></li>
-          <li><span>Bay, Laguna Operations Center &amp; Citywide Surveillance</span><span class="tl-date">2024</span></li>
-          <li><span>Muntinlupa City Computer Aided Dispatch (CAD) Network</span><span class="tl-date">2023 – 2024</span></li>
-          <li><span>Muntinlupa City Outdoor Video Wall Installation</span><span class="tl-date">2024</span></li>
-          <li><span>Muntinlupa Citywide Public Wi-Fi</span><span class="tl-date">2024</span></li>
-          <li><span>Muntinlupa Citywide Surveillance System — Phase III</span><span class="tl-date">Feb – Apr 2023</span></li>
-          <li><span>DepEd Schools Surveillance System, Muntinlupa City</span><span class="tl-date">Oct 2022 – Jan 2023</span></li>
-          <li><span>Citywide Command &amp; Control System — DRRMO Santa Cruz, Laguna</span><span class="tl-date">Jul – Sep 2022</span></li>
-          <li><span>Aquatic Center Sports Complex — Network, Voice &amp; Surveillance</span><span class="tl-date">Jul – Aug 2022</span></li>
-          <li><span>General Trias City Operations Center &amp; Citywide Surveillance</span><span class="tl-date">2022</span></li>
-          <li><span>Citywide Command &amp; Control System — DRRMO Muntinlupa City</span><span class="tl-date">2021</span></li>
+          <li><span>City of Carmona, Cavite - Citywide Surveillance System</span><span class="tl-date">2025</span></li>
+          <li><span>City of Carmona, Cavite - Citywide Surveillance System</span><span class="tl-date">2025</span></li>
+          <li><span>City of Carmona, Cavite - Citywide Surveillance System</span><span class="tl-date">2025</span></li>
+          <li><span>City of Carmona, Cavite - Citywide Surveillance System</span><span class="tl-date">2025</span></li>
+          <li><span>Municipality of Bay, Laguna - Operations Center &amp; Citywide Surveillance</span><span class="tl-date">2024</span></li>
+          <li><span>City of Muntinlupa, NCR - Computer Aided Dispatch (CAD) Network</span><span class="tl-date">2023 – 2024</span></li>
+          <li><span>City of Muntinlupa, NCR - Outdoor Video Wall Installation</span><span class="tl-date">2024</span></li>
+          <li><span>City of Muntinlupa, NCR - Citywide Public Wi-Fi</span><span class="tl-date">2024</span></li>
+          <li><span>City of Muntinlupa, NCR - Citywide Surveillance System — Phase III</span><span class="tl-date">Feb – Apr 2023</span></li>
+          <li><span>City of Muntinlupa, NCR - DepEd Schools Surveillance System</span><span class="tl-date">Oct 2022 – Jan 2023</span></li>
+          <li><span>Municipality of Santa Cruz, Laguna - Municipality-wide Command &amp; Control System</span><span class="tl-date">Jul – Sep 2022</span></li>
+          <li><span>City of Muntinlupa, NCR - Aquatic Center Sports Complex — Network, Voice &amp; Surveillance</span><span class="tl-date">Jul – Aug 2022</span></li>
+          <li><span>City of General Trias, Cavite - Operations Center &amp; Citywide Surveillance</span><span class="tl-date">2022</span></li>
+          <li><span>City of Muntinlupa, NCR - Citywide Command &amp; Control System</span><span class="tl-date">2021</span></li>
           <li><span>UPLINK ISP Network Design and Implementation</span><span class="tl-date">Sep – Nov 2020</span></li>
         </ul>
       </details>
@@ -300,6 +386,7 @@
        Delete this whole <section> if you don't want it yet,
        or copy a .project-card block above into the grid. -->
   <section id="personal-projects" class="section section-alt">
+    <svg class="section-decor section-decor-bl" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M0 116 H76 L98 94 V44"/><circle cx="76" cy="116" r="3"/><circle cx="98" cy="44" r="2.5"/></svg>
     <div class="wrap">
       <h2>Personal Projects</h2>
       <p class="section-intro">Things I've built on my own time.</p>
@@ -319,6 +406,7 @@
 
   <!-- ============ SKILLS ============ -->
   <section id="skills" class="section">
+    <svg class="section-decor section-decor-tr" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M180 24 H104 L82 46 V96"/><circle cx="104" cy="24" r="3"/><circle cx="82" cy="96" r="2.5"/></svg>
     <div class="wrap">
       <h2>Skills</h2>
       <div class="skills-grid">
@@ -378,31 +466,33 @@
 
   <!-- ============ CERTIFICATIONS ============ -->
   <section id="certifications" class="section section-alt">
+    <svg class="section-decor section-decor-bl" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M0 116 H76 L98 94 V44"/><circle cx="76" cy="116" r="3"/><circle cx="98" cy="44" r="2.5"/></svg>
     <div class="wrap">
       <h2>Certifications</h2>
       <!-- Certification/vendor logos: drop square PNG/SVG files into
            images/logos/ using the names below. Any cert without a
            matching file just shows as plain text — no broken-image icon. -->
       <ul class="cert-list">
-        <li><img class="cert-logo" src="images/logos/PRC.svg" alt="" onerror="this.style.display='none'"><span>Electronic Technician</span></li>
-        <li><img class="cert-logo" src="images/logos/PRC.svg" alt="" onerror="this.style.display='none'"><span>Electronic Engineer</span></li>
         <li><img class="cert-logo" src="images/logos/dahua.png" alt="" onerror="this.style.display='none'"><span>Dahua Certified Security Expert</span></li>
-        <li><img class="cert-logo" src="images/logos/VSOL.png" alt="" onerror="this.style.display='none'"><span>VSOL Certified ICT Associate</span></li>
+        <li><img class="cert-logo" src="images/logos/vsol.png" alt="" onerror="this.style.display='none'"><span>VSOL Certified ICT Associate</span></li>
         <li><img class="cert-logo" src="images/logos/maipu.png" alt="" onerror="this.style.display='none'"><span>Maipu Certified Network Professional</span></li>
         <li><img class="cert-logo" src="images/logos/ruijie.png" alt="" onerror="this.style.display='none'"><span>Ruijie Specialist Engineer</span></li>
         <li><img class="cert-logo" src="images/logos/fortinet.png" alt="" onerror="this.style.display='none'"><span>Fortinet NSE 2 — Network Security Expert, Certified Associate</span></li>
-        <li><img class="cert-logo" src="images/logos/DOLE.svg" alt="" onerror="this.style.display='none'"><span>COSH — Safety Officer 2</span></li>
+        <li><img class="cert-logo" src="images/logos/cosh.png" alt="" onerror="this.style.display='none'"><span>COSH — Safety Officer 2</span></li>
         <li><img class="cert-logo" src="images/logos/interference-isolation.png" alt="" onerror="this.style.display='none'"><span>Interference Isolation &amp; Tracking</span></li>
         <li><img class="cert-logo" src="images/logos/spectrum-analyzer.png" alt="" onerror="this.style.display='none'"><span>Advanced Spectrum Analyzer</span></li>
         <li><img class="cert-logo" src="images/logos/frequency-scanning.png" alt="" onerror="this.style.display='none'"><span>Frequency Scanning Best Practices</span></li>
         <li><img class="cert-logo" src="images/logos/wireless-telecom-spectrum.png" alt="" onerror="this.style.display='none'"><span>Wireless Telecom Spectrum</span></li>
         <li><img class="cert-logo" src="images/logos/wireless-lan.png" alt="" onerror="this.style.display='none'"><span>Wireless LAN Masterclass</span></li>
+        <li><img class="cert-logo" src="images/logos/electronic-technician.png" alt="" onerror="this.style.display='none'"><span>Electronic Technician</span></li>
+        <li><img class="cert-logo" src="images/logos/electronic-engineer.png" alt="" onerror="this.style.display='none'"><span>Electronic Engineer</span></li>
       </ul>
     </div>
   </section>
 
   <!-- ============ EDUCATION ============ -->
   <section id="education" class="section">
+    <svg class="section-decor section-decor-tr" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M180 24 H104 L82 46 V96"/><circle cx="104" cy="24" r="3"/><circle cx="82" cy="96" r="2.5"/></svg>
     <div class="wrap">
       <h2>Education</h2>
       <div class="edu-block">
@@ -415,13 +505,14 @@
 
   <!-- ============ CONTACT ============ -->
   <section id="contact" class="section section-alt contact-section">
+    <svg class="section-decor section-decor-bl" viewBox="0 0 180 140" aria-hidden="true" focusable="false"><path d="M0 116 H76 L98 94 V44"/><circle cx="76" cy="116" r="3"/><circle cx="98" cy="44" r="2.5"/></svg>
     <div class="wrap">
       <h2>Get in touch</h2>
       <p class="section-intro">Open to collaborating on network engineering, IoT, embedded systems, industrial automation, and environmental monitoring projects.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener">Message on LinkedIn</a>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener">Message on LinkedIn<svg class="btn-arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 8h9M8.5 3.5L13 8l-4.5 4.5"/></svg></a>
         <!-- Replace with your real email address -->
-        <a class="btn btn-ghost" href="mailto:you@example.com">Send an email</a>
+        <a class="btn btn-ghost" href="mailto:you@example.com">Send an email<svg class="btn-arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 8h9M8.5 3.5L13 8l-4.5 4.5"/></svg></a>
       </div>
       <div class="socials">
         <a href="https://www.linkedin.com/in/engrnimshinasayao/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -438,7 +529,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Nimshi Nasayao — Calabarzon, Philippines</p>
+    <p>Nimshi Chavez Nasayao — Calabarzon, Philippines</p>
   </div>
 </footer>
 
